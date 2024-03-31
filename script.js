@@ -14,18 +14,72 @@ const minus = document.querySelector("minus");
 const multiply = document.querySelector("multiply");
 const divide = document.querySelector("divide");
 
-
+const operatorDisplay = document.querySelector('[data-operator]');
+const operators = document.querySelectorAll(".operator")
+console.log(operators);
 const digits = document.querySelectorAll(".digit");
 let newS = parseInt(one.textContent) ;
 let newS2 = parseInt(two.textContent) ;
 let nums =[];
 digits.forEach((digit) =>{
     // nums.push(parseInt(digit.textContent))
+
     digit.addEventListener('click' , ()=>{
-        inputScreen.value += digit.textContent;
-        console.log(inputScreen.textContent);
+        renderUI(parseInt(digit.textContent))
     });
 });
+function renderUI(Value){
+    inputScreen.value += parseInt(Value);
+}
+let ans = 0;
+function updateAns(operator){
+    console.log(operator);
+    if(operator.textContent === '+')
+        {   
+            operatorDisplay.textContent = '+'
+            console.log(ans);
+            ans += parseInt(inputScreen.value);
+            console.log(ans);
+        }
+    else if(operator.textContent === '-')
+        {   
+            operatorDisplay.textContent = '-';
+            console.log(ans);
+            ans -= parseInt(inputScreen.value);
+            console.log(ans);
+        }
+    else if(operator.textContent === 'x')
+        {   
+            operatorDisplay.textContent = 'x'
+            console.log(ans);
+            ans *= parseInt(inputScreen.value);
+            console.log(ans);
+            // let newValue = parseInt(inputScreen.value) + ans;
+            // inputScreen.value = "";
+            // inputScreen.value = newValue;
+            // console.log(typeof(newValue));
+        }
+    else if(operator.textContent === '/')
+        {   
+            operatorDisplay.textContent = '/'
+            console.log(ans);
+            ans /= parseInt(inputScreen.value);
+            console.log(ans);
+            // let newValue = parseInt(inputScreen.value) + ans;
+            // inputScreen.value = "";
+            // inputScreen.value = newValue;
+            // console.log(typeof(newValue));
+        }
+        inputScreen.value = "";
+}
+operators.forEach((operator) =>{
+    console.log(operator);
+    // nums.push(parseInt(digit.textContent))
+    operator.addEventListener('click' , ()=>{
+        updateAns(operator);
+    });
+});
+
 function sum(a , b){
     return (a+b);
 }
