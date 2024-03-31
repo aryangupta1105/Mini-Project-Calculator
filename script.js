@@ -70,7 +70,7 @@ function updateAns(operator){
             // inputScreen.value = newValue;
             // console.log(typeof(newValue));
         }
-        inputScreen.value = "";
+        // inputScreen.value = "";
 }
 operators.forEach((operator) =>{
     console.log(operator);
