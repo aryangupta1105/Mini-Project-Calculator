@@ -21,7 +21,8 @@
 }
 .Heading{
     margin-bottom: 20px ;
-    font-size: xx-large;
+    font-size: 3rem;
+    animation: scaleUp 1000ms linear 800ms;
 }
 .calculator{
     width: 400px;
@@ -34,17 +35,18 @@
     justify-content: center;
     display: flex;
     box-shadow: 5px 2px 10px black;
-    animation: slideUp 800ms linear 500ms;
+    animation: slideUp 1000ms linear 500ms;
 }
 .screen-container{
     margin: 0 auto;
+    position: relative;
 }
 .inputScreen{
     all: unset;
     background-color: white;
     padding-top: 15px;
     color: black;
-    width: 320px;
+    width: 300px;
     font-size: xx-large;
     padding-bottom: 15px;
     padding-left: 20px;
@@ -129,3 +131,83 @@ button:hover{
     }
 }
 
+.operatorScreen{
+    position: absolute;
+    width: 25px;
+    text-align: center;
+    background-color: white;
+    color: black;
+    font-size: x-large;
+    font-weight: bold;
+    bottom: 5px;
+    right: 10px;
+    z-index: 100;
+}
+/* 
+.box1{
+    position: absolute;
+    right: 100px;
+    top: 50%;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    background-color: red;
+    border-radius: 100%;
+    box-shadow: 10px  5px 60px red;
+    animation: float infinite linear 3000ms;
+    animation-direction: alternate;
+}
+.box2{
+    position: absolute;
+    left: 100px;
+    top: 20%;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    background-color: blue;
+    border-radius: 100%;
+    box-shadow: 10px  5px 60px blue;
+    animation: float2 infinite linear 4000ms;
+    animation-delay: 500ms;
+    animation-direction: alternate;
+}
+.box3{
+    position: absolute;
+    right: 200px;
+    top: 10%;
+    width: 120px;
+    height: 200px;
+    /* border: 1px solid black; */
+    /* background-color: transparent; */
+    border-radius:100%;
+    box-shadow: 10px  5px 60px white;
+    animation: float infinite linear 8000ms;
+    animation-delay: 500ms;
+    animation-direction: alternate;
+} */
+
+
+@keyframes float {
+    0%{
+        translate: -60px -60px;
+    }
+    
+    100%{
+        transform: rotate(360deg);
+        translate: 50px;
+    }
+    
+}
+@keyframes float2 {
+    0%{
+        transform: translateY(0);
+        transform: translateY(-50px);
+    }
+    
+    100%{
+        transform: rotate(360deg);
+        transform: translateY(50px);
+    }
+    
+}
+/*  */
